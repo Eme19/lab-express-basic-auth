@@ -1,1 +1,9 @@
-<h1>Welcome {{username}} to your profile</h1>
+
+<div>
+{{#if username}}
+<h4>Welcome {{username}}</h4>
+{{else}}
+<p>No User Loggined, sorry!
+</p>
+{{/if}}
+</div>

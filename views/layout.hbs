@@ -8,18 +8,39 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <div>
-<ul>
-  <li>
-  <a href="/">Home</a> <br>
-  </li>
-<li>
-  <a href="/auth/signup">Signup</a>
-</li>
-</ul>
-  </div>
+ <body>
 
-  <body>
+
+
+    <ul>
+         {{#if loggedIn}}
+    <li>
+     <a href="/auth/main">Main</a>
+    </li>
+    <li>
+      <a href="/auth/profile">Profile</a>
+   </li>    
+    <li>
+      <a href="/auth/private">Private</a>
+   </li>
+
+    <li id="logout-style">
+       <form id="logout-form" action="/auth/logout" method="post">
+      <button>Logout</button>
+      </form>
+   </li>
+         {{else}}
+             <li>
+            <a href="/">Home</a>
+         </li>
+         <li>
+            <a href="/auth/signup">Signup</a>
+         </li>
+         <li>
+            <a href="/auth/login">Login</a>
+         </li>
+         {{/if}}
+      </ul>
 
     {{{body}}}
 
